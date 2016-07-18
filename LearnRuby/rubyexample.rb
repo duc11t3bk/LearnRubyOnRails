@@ -138,3 +138,72 @@ arrayNew.each do
 	|iter|
 	puts iter
 end
+
+arrayReverse = array.reverse;
+puts arrayReverse.inspect;
+puts array.inspect;
+puts array.reverse!.inspect;
+
+array = [1,2,2,2,3,4,5,8,11];
+puts "---------------------------"
+puts "array.indexof(2) #{array.index(2)}";
+puts "array.include? 1 #{array.include? 1}";
+puts "array.rindex(2) #{array.rindex(2)}";
+
+puts array.join("-");
+puts array.inspect;
+puts array.uniq.inspect;
+puts array.inspect;
+
+array = Array.new(3,"a");
+puts array.inspect;
+array = Array.new;
+array.push(1);
+array << 2 << 3;
+array.unshift(0);
+puts array.inspect;
+array.insert(4,4);
+puts array.inspect;
+
+puts array.pop;
+puts array.inspect;
+array = [4,3,5,1,7,6,2];
+puts array.sort.inspect;
+puts array.inspect;
+array.sort!;
+puts array.inspect;
+
+#----hash------------------------
+
+puts "--------------------------------";
+
+
+hash = Hash.new;
+hash[:de]="Germany";
+hash[:sk]="Slovakia";
+hash[:hu]="Hungary";
+hash[:us]="United States";
+hash[:no]="Norway";
+puts "Hash ";
+puts hash;
+puts "Hash.has_key?(:de) #{hash.has_key?(:de)}";
+puts "Hash.has_value?('Germany') #{hash.has_value?('Germany')}";
+
+hash.each do
+	|k,v|
+	puts "Key: #{k}, Value: #{v}";
+end
+
+hash_key = hash.keys;
+for i in 0...hash_key.length do
+	puts "Hash[#{hash_key[i]}]=#{hash[hash_key[i]]}";
+end
+
+hash1= {1=>"Jane", 2=>"Thomas"};
+hash2= {3=>"Robert", 4=>"Julia"};
+puts "Hash1 #{hash1}";
+puts "Hash2 #{hash2}";
+
+hash = hash1.merge(hash2);
+puts "Hash #{hash}";
+
