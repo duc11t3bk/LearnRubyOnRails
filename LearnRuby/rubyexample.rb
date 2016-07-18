@@ -106,6 +106,35 @@ array.each do
 	|iter|
 	puts "array #{iter}"
 end
+
+#---array------------------------------
 puts array
 puts array.inspect
 puts "#{array[0,3]}"
+
+array2= [[1,2],[3,4],[5,6]];
+puts array2.inspect;
+
+puts array2[0..2].inspect;
+
+for i in 0...array2.length do
+	puts array2[i].size;
+	puts array2[i].inspect;
+	for j in 0...array2[i].length do
+		puts array2[i][j];
+	end
+end
+
+puts array.values_at(0..2).inspect;
+puts array.values_at(0,2,3).inspect;
+puts array[-2];
+
+arrayNew = Array.new;
+arrayNew.push(1);
+arrayNew.push(2);
+
+puts "array new"
+arrayNew.each do 
+	|iter|
+	puts iter
+end
