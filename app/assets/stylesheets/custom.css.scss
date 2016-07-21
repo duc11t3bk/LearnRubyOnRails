@@ -71,3 +71,19 @@ p{
 	float: left;
 	margin-left: 15px;
 }
+
+/*mixins, variables,...debug*/
+
+@mixin box_sizing {
+	box-sizing:			border-box;
+	-moz-box-sizing: 	border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}
