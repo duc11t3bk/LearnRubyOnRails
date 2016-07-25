@@ -146,3 +146,16 @@ section h1 {
 		color: $state-danger-text;
 	}
 }
+
+#form-login {
+	.checkbox {
+		span {
+			margin-left: 20px;
+			font-weight: normal;
+		}
+	}
+}
+#session_remmeber_me {
+	width: auto;
+	margin-left: 0;
+}
