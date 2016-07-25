@@ -5952,3 +5952,44 @@ Processing by SessionsController#create as HTML
   Rendered layouts/_header.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 52ms (Views: 43.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-25 07:30:57 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 671ms (Views: 652.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-25 07:30:59 +0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-25 07:30:59 +0700
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-25 07:30:59 +0700
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-07-25 07:31:04 +0700
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (8.0ms)
+  Rendered users/new.html.erb within layouts/application (93.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 149ms (Views: 141.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-07-25 07:31:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QUA46qOK8YB0aOOlGKVCjuYgC06wcW879LPcClMg/tw9Ki1l2HDXrHk3JtWHv/ZOUdCd8B02uN56VZ3SCW2jvw==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered shared/_error_messages.html.erb (5.0ms)
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 146ms (Views: 37.8ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
