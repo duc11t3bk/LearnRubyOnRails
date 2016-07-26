@@ -10628,3 +10628,1023 @@ Processing by UsersController#show as HTML
   Rendered layouts/_header.html.erb (1.4ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 321ms (Views: 318.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 13:25:52 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 102]]
+  Rendered layouts/_header.html.erb (15.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 610ms (Views: 599.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 13:25:52 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-26 13:25:52 +0700
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-26 13:25:52 +0700
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 13:25:52 +0700
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2016-07-26 13:25:55 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EKbZCytxbtZ6XotZsjsspz3eVMmGDSrOkUgPVfQmpQ74AXaTXCXCnXS/NN+LmOIRP3HO5ce86++8/0OuShW/pA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 102]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 13:25:55 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 13:25:55 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 13:25:56 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (191.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 224ms (Views: 223.3ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddResetToUsers (20160726063714)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "reset_digest" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "reset_sent_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160726063714"]]
+  [1m[35m (70.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/rails/mailers/user_mailer/password_reset" for 127.0.0.1 at 2016-07-26 14:29:30 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+NameError (uninitialized constant UserMailerPreview::Usermailer):
+  test/mailers/previews/user_mailer_preview.rb:15:in `password_reset'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.2ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (29.8ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset" for 127.0.0.1 at 2016-07-26 14:29:42 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+NameError (uninitialized constant UserMailerPreview::Usermailer):
+  test/mailers/previews/user_mailer_preview.rb:15:in `password_reset'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset" for 127.0.0.1 at 2016-07-26 14:30:04 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.6ms)
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.6ms)
+
+UserMailer#password_reset: processed outbound mail in 180.0ms
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/templates/rails/mailers/email.html.erb (6.0ms)
+Completed 200 OK in 213ms (Views: 8.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for 127.0.0.1 at 2016-07-26 14:30:05 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.2ms)
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#password_reset: processed outbound mail in 15.5ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fplain" for 127.0.0.1 at 2016-07-26 14:34:06 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/password_reset"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.3ms)
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#password_reset: processed outbound mail in 13.5ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for 127.0.0.1 at 2016-07-26 14:34:07 +0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+
+UserMailer#password_reset: processed outbound mail in 12.9ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:39:02 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 374ms (Views: 364.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:39:03 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:39:03 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:40:07 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:40:07 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 15:40:10 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (194.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 230ms (Views: 229.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-07-26 15:40:21 +0700
+Processing by PasswordResetsController#new as HTML
+  Rendered password_resets/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-07-26 15:40:47 +0700
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0jTka2dpS97oIgcYXuZ0nnUDzW67Jv0u4KqM6mMxHjc6k0vzED3nlebDuJ5nRbood6xXQvqXPA/NHcAR3QIEnQ==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "nguyetitbkdn@gmail.com"]]
+  Rendered password_resets/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 59ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "nguyetitbkdn@gmail.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "nguyet@gmail.com"]]
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-07-26 15:42:11 +0700
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Um6dYXZNhr+vO3SGg+wDiGYux6xm3UMGhuZM8s4GeHu6yTL5ARkq9KHaywC6T80+ZIFdgCdsgierUQAJcDVi0Q==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "example@railstutorial.com"]]
+  Rendered password_resets/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "example@railtutorial.com"]]
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 15:43:53 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railtutorial.org"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "example@railtutorial.org"]]
+
+
+Started POST "/login" for 127.0.0.1 at 2016-07-26 15:44:36 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JHbhSjBFk+neoEEcFI2qTa97Xpf+eYQ+bV80XEu9oYHM0U7SRxE/otBB/potLmT7rdTEu7/IRR9A6Hin9Y67Kw==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 100ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-07-26 15:44:36 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2016-07-26 15:45:16 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xrFl16AnxnFDcrKG+3Cbsy6+zk7m3bGjdgUwdDywMSMuFspP13NqOk2TDQDC01UFLBFUYqdscIJbsnyPgoMriQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:45:16 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:45:16 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 15:45:16 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-07-26 15:45:18 +0700
+Processing by PasswordResetsController#new as HTML
+  Rendered password_resets/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-07-26 15:45:28 +0700
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l5zbJbW6F7J4OEZ5+omgimV1arD4DAUp1EQ3+asSCTF/O3S9wu67+XbZ+f/DKm48Z9rwnLm9xAj583sCFSETmw==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["reset_digest", "$2a$10$xTogKJBljooW81QctJH2y.EUlRscIX30CKGRqsB3MeBtOej.7vWyy"], ["updated_at", "2016-07-26 08:45:28.267541"], ["id", 1]]
+  [1m[36m (104.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "reset_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_sent_at", "2016-07-26 08:45:28.374435"], ["updated_at", "2016-07-26 08:45:28.375526"], ["id", 1]]
+  [1m[35m (73.7ms)[0m  commit transaction
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.6ms)
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.4ms)
+
+UserMailer#password_reset: processed outbound mail in 140.5ms
+
+Sent mail to example@railstutorial.org (6.0ms)
+Date: Tue, 26 Jul 2016 15:45:28 +0700
+From: from@example.com
+To: example@railstutorial.org
+Message-ID: <5797232898b2d_44b43fa720b530cc8481b@framgia-Inspiron-3459.mail>
+Subject: Password reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57972328975ef_44b43fa720b530cc8473";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57972328975ef_44b43fa720b530cc8473
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset password click link below: 
+
+http://localhost:3000/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org
+
+This link will expire in two hours.
+
+If you did not request your password to be reset, please ignore this email and your password will stay as it is.
+
+----==_mimepart_57972328975ef_44b43fa720b530cc8473
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Password reset</h1>
+
+<p>
+  To reset password click the link below
+</p>
+
+<a href="http://localhost:3000/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org">Reset password</a>
+
+<p>This link will be expire in two hours</p>
+
+<p>
+	If you did not request your password to be reset, please ignore this email and your password will stay as it is.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_57972328975ef_44b43fa720b530cc8473--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 437ms (ActiveRecord: 179.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:45:28 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:45:28 +0700
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 15:45:44 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:45:44 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:45:45 +0700
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 15:46:02 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:46:02 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:46:03 +0700
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 15:52:49 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:52:49 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:52:49 +0700
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 15:53:08 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:53:08 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 324ms (Views: 323.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:53:08 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:58:25 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:58:25 +0700
+
+
+Started GET "/password_resets/1/edit" for 127.0.0.1 at 2016-07-26 15:58:43 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:58:43 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:58:43 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 15:58:54 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (182.2ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 216ms (Views: 215.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-07-26 15:59:04 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GMgPej5xoGJ2bGqiLYQ6oLNnWL0Gdqy0ch4qNn3CGknwb6DiSSUMKXiN1SQUJ/QWscjCkUfHbZVfqWbNw/EA4w==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 106ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-07-26 15:59:04 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 15:59:56 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 15:59:56 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 15:59:56 +0700
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:00:09 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:00:09 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:00:09 +0700
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/password_resets/lRGy4kL5E5btiohqHpthkw/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:02:11 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"lRGy4kL5E5btiohqHpthkw"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:02:11 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (20.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 334ms (Views: 332.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:02:12 +0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-07-26 16:10:05 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2016-07-26 16:10:07 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered shared/_error_messages.html.erb (2.6ms)
+  Rendered users/edit.html.erb within layouts/application (184.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 224ms (Views: 220.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2016-07-26 16:10:11 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XhG6iY3Veunzv7SC2vNSESItkRv3w//nWa1WOSdTs3y2thUR+oHWov1eCwTjUJynIIILN7ZyPsZ0GhrCmWCp1g=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:10:11 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:10:11 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 16:10:14 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-07-26 16:10:15 +0700
+Processing by PasswordResetsController#new as HTML
+  Rendered password_resets/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-07-26 16:10:21 +0700
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JHD/BtwVbZtFYd+LD6xe5WK9rDFmPWCsgY3476U30X3M11Ceq0HB0EuAYA02D5BTYBI2HSeMoY2sOrQUGwTL1w==", "password_reset"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "example@railstutorial.org"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_digest", "$2a$10$yIGdy5o0I5Zd9KsmXKp7Eu4/XY0YQ1/StAC9.83Om8QnZc/s9EMu2"], ["updated_at", "2016-07-26 09:10:21.192179"], ["id", 1]]
+  [1m[35m (106.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "reset_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["reset_sent_at", "2016-07-26 09:10:21.300999"], ["updated_at", "2016-07-26 09:10:21.302202"], ["id", 1]]
+  [1m[36m (73.7ms)[0m  [1mcommit transaction[0m
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.6ms)
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.5ms)
+
+UserMailer#password_reset: processed outbound mail in 132.9ms
+
+Sent mail to example@railstutorial.org (6.0ms)
+Date: Tue, 26 Jul 2016 16:10:21 +0700
+From: from@example.com
+To: example@railstutorial.org
+Message-ID: <579728fd84e31_4a6a2d91b04136ab@framgia-Inspiron-3459.mail>
+Subject: Password reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_579728fd83810_4a6a2d91b0413521";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_579728fd83810_4a6a2d91b0413521
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset password click link below: 
+
+http://localhost:3000/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org
+
+This link will expire in two hours.
+
+If you did not request your password to be reset, please ignore this email and your password will stay as it is.
+
+----==_mimepart_579728fd83810_4a6a2d91b0413521
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Password reset</h1>
+
+<p>
+  To reset password click the link below
+</p>
+
+<a href="http://localhost:3000/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org">Reset password</a>
+
+<p>This link will be expire in two hours</p>
+
+<p>
+	If you did not request your password to be reset, please ignore this email and your password will stay as it is.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_579728fd83810_4a6a2d91b0413521--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 430ms (ActiveRecord: 181.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:10:21 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:10:21 +0700
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:10:42 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:10:42 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:10:42 +0700
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:17:05 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:17:05 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 333ms (Views: 332.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:17:05 +0700
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:22:18 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `activated' for nil:NilClass):
+  app/controllers/password_resets_controller.rb:49:in `valid_user'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (20.5ms)
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:23:06 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `activated' for nil:NilClass):
+  app/controllers/password_resets_controller.rb:49:in `valid_user'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (21.0ms)
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:24:17 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+This is from debug
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:24:17 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:24:17 +0700
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:25:39 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `activated?' for nil:NilClass):
+  app/controllers/password_resets_controller.rb:49:in `valid_user'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.4ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (20.4ms)
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:27:36 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant PasswordResetsController::Log4r):
+  app/controllers/password_resets_controller.rb:50:in `valid_user'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (20.7ms)
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:32:23 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:32:23 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:32:23 +0700
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:38:19 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:38:19 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:38:19 +0700
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:40:01 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `activated?' for nil:NilClass):
+  app/controllers/password_resets_controller.rb:49:in `valid_user'
+
+
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /home/framgia/.rvm/gems/ruby-2.3.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:40:30 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:40:30 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:40:30 +0700
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:40:43 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+Redirected to http://localhost:3000/
+Filter chain halted as :valid_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:40:43 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:40:43 +0700
+
+
+Started GET "/password_resets/ayTC0anfJhJtXNv63Za6YA/edit?email=example%40railstutorial.org" for 127.0.0.1 at 2016-07-26 16:41:11 +0700
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"email"=>"example@railstutorial.org", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  Rendered shared/_error_messages.html.erb (1.8ms)
+  Rendered password_resets/edit.html.erb within layouts/application (200.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 322ms (Views: 236.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/password_resets/ayTC0anfJhJtXNv63Za6YA" for 127.0.0.1 at 2016-07-26 16:41:40 +0700
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+P0Sujn3y9VMsBtcYP8KOOQa3tRlMClUj+l0MeUgGOoQWr0iTqNnnkJRpNpZXMSO5rVE+CSB6HWiXjjKWxMCQA==", "email"=>"example@railstutorial.org", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update password", "id"=>"ayTC0anfJhJtXNv63Za6YA"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "example@railstutorial.org"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('example@railstutorial.org') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password_digest", "$2a$10$YQdHQGHi4ySFRDr2BGBS9.zvk/bUWhswEoNaYPMzyjCGiVWhYNZ4K"], ["updated_at", "2016-07-26 09:41:40.999600"], ["id", 1]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 287ms (ActiveRecord: 99.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-07-26 16:41:41 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2016-07-26 16:41:44 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"twlAM/Ven4b3PxbTYmSdve8VaSQBRmG8kONiki+lclFfru+rggozzfneqVVbx1ML7brzCED3oJ29VC5pkZZo+w=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-26 16:41:44 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2016-07-26 16:41:44 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-07-26 16:41:44 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-07-26 16:41:50 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RNaGrvZHOYd87CtmSQr8g7TSd5uF4HtHfYSNM8DPnZOscSk2gROVzHINlOBwqTI1tn3tt8RRumZQM8HIfvyHOQ==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "example@railstutorial.org"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 75ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-07-26 16:41:50 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.2ms)
